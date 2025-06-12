@@ -28,7 +28,7 @@ header {
 .logo .dot {
   width: 10px;
   height: 10px;
-  background: #950a8e;
+  background: #a740a2;
   border-radius: 50%;
 }
 
@@ -38,13 +38,13 @@ header {
 
 .logo span {
   font-size: 14px;
-  color: #950a8e;
+  color: #a740a2;
 }
 
 nav a {
   margin-left: 20px;
   text-decoration: none;
-  color: #950a8e;
+  color: #a740a2;
   font-weight: 500;
 }
 
@@ -96,19 +96,19 @@ main {
 }
 
 .resume {
-  background-color: #950a8e;
+  background-color: #a740a2;
 }
 
 .research {
-  background-color: #950a8e;
+  background-color: #a740a2;
 }
 
 .outreach {
-  background-color: #950a8e;
+  background-color: #a740a2;
 }
 
 .personal {
-  background-color: #950a8e;
+  background-color: #a740a2;
 }
 
 footer {
@@ -131,9 +131,9 @@ footer {
 }
 
 .footer-content a {
-  color: #0077cc;
+  color: black;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .credit {
@@ -141,3 +141,13 @@ footer {
   font-size: 12px;
   color: #999;
 }
+
+.foot_log:hover {
+  color: #a740a2;
+  font-size: 18px;
+}
+
+
+
+
+
