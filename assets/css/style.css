@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Arial Rounded MT Bold', sans-serif;
 }
 
 body {
@@ -17,6 +17,8 @@ header {
   align-items: center;
   background: #fff;
   border-bottom: 1px solid #ddd;
+  position: fixed;
+  width: 100%;
 }
 
 .logo {
@@ -47,6 +49,12 @@ nav a {
   color: #a740a2;
   font-weight: 500;
 }
+nav a:hover {
+  color: #b914b1;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
 
 main {
   text-align: center;
@@ -58,13 +66,36 @@ main {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
+  margin-top: 35px;
   margin-bottom: 20px;
 }
 
 .profile h2 {
   font-size: 28px;
   margin-bottom: 5px;
+   font-size: 4rem;
+      font-family: 'Arial Rounded MT Bold', sans-serif;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      margin: 35px 35px;
 }
+
+.point{
+  color: #a740a2;
+}
+
+   
+ .stroke {
+      color: transparent;
+      -webkit-text-stroke: 2px #000000; /* contour noir */
+    }
+
+    .filled {
+      color: #000000;
+    }
+
 
 .profile h3 {
   color: #555;
@@ -78,21 +109,82 @@ main {
   font-size: 16px;
   line-height: 1.6;
 }
+ 
+ .skills {
+      display: flex;
+      justify-content: center; /* centre horizontalement */
+      align-items: center;
+      margin: 20px 20px;     /* centre verticalement */
+    }
 
+    .radio-group {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .radio-option input[type="radio"] {
+      appearance: none;
+      border: 2px solid #a740a2;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      outline: none;
+      cursor: pointer;
+      
+    }
+
+    .radio-option input[type="radio"]:checked::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 8px;
+      height: 8px;
+      background: #a740a2;
+      border-radius: 50%;
+    }
+  
 .buttons {
-  margin-top: 40px;
+  margin-top: 70px;
+}
+.buttons :hover{
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  size: 1.05;
+  transition: size 0.3s ease;
+  color: #b914b1; 
+  text-decoration: none;
+}
+.buttons a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+.buttons a:hover {
+  color: #fff;
+  text-decoration: none;
+
+  
 }
 
 .btn {
-  margin: 10px;
+  margin: 25px;
   padding: 15px 25px;
   border: none;
   border-radius: 50%;
   font-weight: bold;
   color: #fff;
   cursor: pointer;
-  width: 80px;
-  height: 80px;
+  width: 125px;
+  height: 125px;
 }
 
 .resume {
@@ -143,8 +235,10 @@ footer {
 }
 
 .foot_log:hover {
-  color: #a740a2;
+  color:#b914b1;
   font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 
