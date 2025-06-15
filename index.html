@@ -10,26 +10,28 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <h1>yourIntrovert__</h1>
-      <span>Developer Engineer</span>
+  <header class="" >
+    <div class="logo name ">
+      <span class="dot "></span>
+      <span class="dot "></span>
+      <span class="dot "></span>
+      <h1 class="" >yourIntrovert__</h1>
+      <span class="" >Developer Engineer</span>
     </div>
-    <nav>
+    <nav id="nav-menu" >
       <a href="index.html">Home</a>
       <a href="assets/Extensions/about.html">About</a>
       <a href="assets/Extensions/resume.html">Resume</a>
       <a href="#footer">Contact</a>
     </nav>
+  
+
   </header>
 
   <main>
     <section class="profile">
       <img src="assets/images/Logo.jpg" alt="Profile Picture">
-      <h2>
+      <h2  class="">
         <span class="stroke" >Carl Elie</span>
         <span class="filled" ><span class="point" >.</span>Aka</span>
       </h2>
@@ -58,11 +60,18 @@
       </div>
     </section>
 
-    <section class="buttons">
-      <button class="btn resume"><a href="index.html">Home</a></button>
-      <button class="btn research"><a href="assets/Extensions/about.html">About</a></button>
-      <button class="btn outreach"><a href="assets/Extensions/resume.html">Resume</a></button>
+    <section class="buttons ">
+      <button class="btn resume reveal hidden" onclick="openModal('') "><a href="index.html">Home</a></button>
+      <button class="btn research reveal hidden" onclick="openModal('assets/Extensions/about.html') ">About</button>
+      <button class="btn outreach reveal hidden" onclick="openModal('assets/Extensions/resume.html') ">Resume</button>
     </section>
+    <!-- Pop-up (modal) placé en dehors de la section -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">✖</span>
+    <iframe id="modal-frame" src="" frameborder="0"></iframe>
+  </div>
+</div>
   </main>
 
   <footer id="footer"> >
@@ -91,5 +100,50 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    /* Masquer au départ */
+     const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // Pour n’animer qu’une fois
+      }
+    });
+  });
+
+  document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+
+   function openModal(pageUrl) {
+    const modal = document.getElementById('modal');
+    const content = document.querySelector('.modal-content');
+    const iframe = document.getElementById('modal-frame');
+
+    modal.style.display = 'flex';
+    content.classList.remove('hide'); // au cas où il y aurait une animation de fermeture précédente
+    iframe.src = pageUrl;
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('modal');
+    const content = document.querySelector('.modal-content');
+    const iframe = document.getElementById('modal-frame');
+
+    content.classList.add('hide');
+
+    content.addEventListener('animationend', function handler() {
+      modal.style.display = 'none';
+      iframe.src = ''; // éviter que la page continue de tourner
+      content.classList.remove('hide');
+      content.removeEventListener('animationend', handler); // Nettoyage du listener
+    });
+  }
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('nav-menu');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('show');
+    burger.classList.toggle('active');
+  });
+  </script>
 </body>
 </html>
